@@ -13,7 +13,9 @@ PROJECT="$(gcloud config get-value core/project)"
 
 ZONE="$(gcloud config get-value compute/zone)"
 
-if [ ! -z gsutil ls -b gs://${PROJECT_TF_STATE_BUCKET} ]
+BUCKET = gsutil ls -b gs://${PROJECT_TF_STATE_BUCKET}
+
+if [ ! -z "$BUCKET"]
 then
     echo "${PROJECT_TF_STATE_BUCKET} already existis"
 else
