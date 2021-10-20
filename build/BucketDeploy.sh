@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e 
-'RANDOM_NUM=${RANDOM}'
 
 gcloud config set project terraform-training-318910
 
