@@ -1,7 +1,12 @@
 steps:
-  - id: 'create'
+  - id: 'create bucket'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['./build/BucketDeploy.sh']
 
-    
+  - id: 'project create'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['./build/ProjectDeploy.sh']
+
+  
