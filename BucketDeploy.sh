@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e 
 
 gcloud config set project terraform-training-318910
