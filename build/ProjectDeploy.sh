@@ -7,7 +7,7 @@ export NEW_PROJECT="omar-cicd-${RANDOM_NUM}"
 
 #check if a project called omar-cicd-'random number' exisits in padawan dir
 FILTER_PROJ="$(gcloud projects list --filter 'parent.id=129846093148 AND parent.type=folder AND name:omar-cicd-*')"
-echo $FILTER_PROJ
+echo "$FILTER_PROJ already exists"
 
 #if this does not exisit then the following code is to create a project
 if [ -z "$FILTER_PROJ" ]; then
@@ -22,6 +22,6 @@ if [ -z "$FILTER_PROJ" ]; then
     exit 0
 [ else gcloud config set project ${FILTER_PROJ}; ]
 export FILTER_PROJ
-echo $FILTER_PROJ
+echo "$FILTER_PROJ was created"
 fi
 exit 0

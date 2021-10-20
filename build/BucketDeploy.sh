@@ -15,5 +15,4 @@ ZONE="$(gcloud config get-value compute/zone)"
 
 gsutil ls -b gs://${PROJECT_TF_STATE_BUCKET} || gsutil mb -p ${PROJECT} -b on gs://${PROJECT_TF_STATE_BUCKET}
 
-export PROJECT_TF_STATE_BUCKET
-echo $PROJECT_TF_STATE_BUCKET
+echo "$PROJECT_TF_STATE_BUCKET was created"
