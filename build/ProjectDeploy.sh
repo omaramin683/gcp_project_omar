@@ -21,5 +21,7 @@ if [ -z "$FILTER_PROJ" ]; then
     gsutil ls -b gs://${RANDOM_BUCKET} || gsutil mb -p ${NEW_PROJECT} -b on gs://${RANDOM_BUCKET}
     exit 0
 [ else gcloud config set project ${FILTER_PROJ}; ]
+export FILTER_PROJ
+echo $FILTER_PROJ
 fi
 exit 0
