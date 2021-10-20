@@ -13,9 +13,7 @@ PROJECT="$(gcloud config get-value core/project)"
 
 ZONE="$(gcloud config get-value compute/zone)"
 
-gsutil ls -b gs://${PROJECT_TF_STATE_BUCKET}
-
-export BUCKET=$PROJECT_TF_STATE_BUCKET
+export BUCKET={gsutil ls -b gs://${PROJECT_TF_STATE_BUCKET}}
 
 if [ ! -z "$BUCKET"]
 then
