@@ -1,0 +1,7 @@
+steps:
+  - id: 'create'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['./BucketDeploy.sh']
+
+    
