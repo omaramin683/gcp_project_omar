@@ -1,14 +1,14 @@
 #!/bin/bash
 
 set -e 
-RANDOM_NUM=${RANDOM}
+'RANDOM_NUM=${RANDOM}'
 
 gcloud config set project terraform-training-318910
 
 gcloud config set compute/zone europe-west1-b
 gcloud services enable compute.googleapis.com cloudresourcemanager.googleapis.com
 
-PROJECT_TF_STATE_BUCKET="remote_omarbucket_cicd_${RANDOM}"
+PROJECT_TF_STATE_BUCKET="remote_omarbucket_cicd_28011999"
 
 PROJECT="$(gcloud config get-value core/project)"
 
