@@ -7,7 +7,7 @@ gcloud config set project terraform-training-318910
 gcloud config set compute/zone europe-west1-b
 gcloud services enable compute.googleapis.com cloudresourcemanager.googleapis.com
 
-PROJECT_TF_STATE_BUCKET="REMOTESTATE-OMAR-CICD"
+PROJECT_TF_STATE_BUCKET="remote_omarbucket_cicd_280199"
 
 PROJECT="$(gcloud config get-value core/project)"
 
