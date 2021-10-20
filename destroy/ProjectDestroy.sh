@@ -2,7 +2,7 @@
 set -e
 
 #sets the current project to the id of the project we create
-CURRENT_PROJ="$(gcloud projects list --filter 'parent.id=398506523923 AND parent.type=folder AND name:omar-cicd-*' --format='value(project_id)')"
+CURRENT_PROJ="$(gcloud projects list --filter 'parent.id=129846093148 AND parent.type=folder AND name:omar-cicd-*' --format='value(project_id)')"
 
 echo $CURRENT_PROJ
 
