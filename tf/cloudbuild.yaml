@@ -9,3 +9,8 @@ steps:
     entrypoint: 'bash'
     args: ['./tf/TfBuild.sh']
   
+  - id: 'Terraform main.tf'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['./tf/maintf.sh']
+  
