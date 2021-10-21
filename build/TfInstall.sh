@@ -3,9 +3,9 @@ set -e
 
 echo "Installing Terraform------------------"
 
-sudo apt-get update -y && apt-get upgrade -y 
+apt-get update -y && apt-get upgrade -y 
 
-sudo install wget
+install wget
 
 echo "Unzip Terraform zip file---------------"
 wget https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip
