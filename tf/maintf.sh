@@ -4,7 +4,6 @@ set -e
 apt-get install gedit
 apt-get purge gedit gedit-common
 apt-get clean
-apt-get install gedit
 
 echo "tf init---------"
 terraform init 
