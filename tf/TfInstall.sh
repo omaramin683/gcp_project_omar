@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+cd ./tf/
+
 echo "Installing all required commands/packages"
 
 apt-get update -y 
