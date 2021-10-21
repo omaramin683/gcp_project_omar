@@ -14,6 +14,8 @@ apt-get install wget -y
 echo "Getting Terraform package from Hashicorp"
 wget https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip
 
+rm -rf terraform/
+
 echo "Unzipping Terraform package"
 unzip -o terraform_0.13.1_linux_amd64.zip
 
