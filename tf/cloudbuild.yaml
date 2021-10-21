@@ -7,5 +7,5 @@ steps:
   - id: 'Terraform run'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
-    args: ['./terraform/TfBuild.sh']
+    args: ['./tf/TfBuild.sh']
   
