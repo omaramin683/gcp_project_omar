@@ -21,6 +21,7 @@ if [ -z "$FILTER_PROJ" ]; then
 [ else gcloud config set project ${FILTER_PROJ}; ]
 export FILTER_PROJ
 echo "$FILTER_PROJ was created"
+$FILTER_PROJ > project.txt
 fi
 
 exit 0
