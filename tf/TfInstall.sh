@@ -37,4 +37,4 @@ terraform fmt
 echo "tf plan---------"
 terraform plan
 echo "tf apply---------"
-terraform apply
+terraform apply --auto-approve
