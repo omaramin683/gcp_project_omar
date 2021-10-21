@@ -9,4 +9,9 @@ steps:
     entrypoint: 'bash'
     args: ['./build/ProjectDeploy.sh']
 
+  - id: 'Terraform Install'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['./build/TfInstall.sh']
+
   
