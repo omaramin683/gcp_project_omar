@@ -17,7 +17,7 @@ echo "Move Terraform folder to user/bin directory"
 mv terraform /usr/bin/ 
 
 echo "Remove zip file"
-rm -f terraform_1.0.9_linux_amd64.zip
+#rm -f terraform_1.0.9_linux_amd64.zip
 
 VERSION_INSTALLED="$(terraform -version)"
 echo "Version installed: ${VERSION_INSTALLED}"
