@@ -1,17 +1,16 @@
 steps:
-  - id: 'create bucket'
+  - id: 'Terraform Install'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
-    args: ['./build/BucketDeploy.sh']
-
+    args: ['./build/TfInstall.sh']
+  
   - id: 'project create'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['./build/ProjectDeploy.sh']
 
-  - id: 'Terraform Install'
+  - id: 'create bucket'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
-    args: ['./build/TfInstall.sh']
-
+    args: ['./build/BucketDeploy.sh']
   
