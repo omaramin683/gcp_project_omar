@@ -21,15 +21,6 @@ if [ -z "$FILTER_PROJ" ]; then
 [ else gcloud config set project ${FILTER_PROJ}; ]
 export FILTER_PROJ
 echo "$FILTER_PROJ was created"
-
-echo "tf init---------"
-terraform init 
-echo "tf fmt---------"
-terraform fmt
-echo "tf plan---------"
-terraform plan
-echo "tf apply---------"
-terraform apply
 fi
 
 exit 0
