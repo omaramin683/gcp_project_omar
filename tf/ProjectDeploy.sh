@@ -13,7 +13,8 @@ export FILTER_PROJ
 
 echo "$FILTER_PROJ already exisits"
 
-sed -i 's|project_id|'$FILTER_PROJ'|g' variables.tf
+#sed -i 's|project_id|'$FILTER_PROJ'|g' variables.tf
+sed -i -e "s/project_id/$FILTER_PROJ/g" variables.tf
 
 #if this does not exisit then the following code is to create a project
 if [ -z "$FILTER_PROJ" ]; then
