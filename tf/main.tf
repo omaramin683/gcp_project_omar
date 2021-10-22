@@ -15,9 +15,12 @@ resource "random_integer" "priority" {
   min = 1
   max = 50000
   }
+output "my_integer" {
+  value = random_integer.my_integer.result
+}
 
 resource "google_storage_bucket" "default" {
-  name = "omar_tf_gcp_bucket.${random_integer.priority.result}"
+  name = "omar_tf_gcp_bucket_${my_integer}"
   project = "${var.project}"
   storage_class = "REGIONAL"
   location = "us-east1"
