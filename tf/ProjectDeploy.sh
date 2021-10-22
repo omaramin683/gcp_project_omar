@@ -15,7 +15,7 @@ echo "$FILTER_PROJ already exisits"
 
 if [ "$FILTER_PROJ" ]; then
     sed -i 's|project_id|'$FILTER_PROJ'|g' variables.tf
-
+fi
 #if this does not exisit then the following code is to create a project
 if [ -z "$FILTER_PROJ" ]; then
     gcloud projects create ${NEW_PROJECT} --folder=263138525915
