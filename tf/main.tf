@@ -11,8 +11,14 @@ variable "storage_class" {
   type = string
 }
 
-resource "google_storage_bucket" "omar_tf_gcp_buckest_test_28011999" {
-  name = "omar_tf_gcp_bucket_280199_test"
+resource "random_integer" "priority" {
+  min = 1
+  max = 50000
+  }
+}
+
+resource "google_storage_bucket" "default" {
+  name = "omar_tf_gcp_bucket."${random_integer.priority.result}""
   project = "${var.project}"
   storage_class = "REGIONAL"
   location = "us-east1"
