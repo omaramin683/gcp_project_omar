@@ -12,9 +12,10 @@ FILTER_PROJ="$(gcloud projects list --filter 'parent.id=263138525915 AND parent.
 export FILTER_PROJ
 
 echo "$FILTER_PROJ already exisits"
-sh "terraform init"
-sh "terraform plan -out activator-plan -var='project=$FILTER_PROJ' -var-file=./tf/variables.tf"
-sh "terraform apply --auto-approve activator-plan"
+terraform init
+terraform plan -out activator-plan -var="project=$FILTER_PROJ" -var-file=./tf/variables.tf
+terraform apply --auto-approve activator-plan
+
 #if this does not exisit then the following code is to create a project
 if [ -z "$FILTER_PROJ" ]; then
     gcloud projects create ${NEW_PROJECT} --folder=263138525915

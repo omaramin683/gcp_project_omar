@@ -1,10 +1,10 @@
-steps:
-  - id: 'Project creation'
-    name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args: ['./tf/ProjectDeploy.sh']
-  
+steps:  
   - id: 'Terraform Install and Run'
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['./tf/TfInstall_Run.sh']
+  
+  - id: 'Project creation'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['./tf/ProjectDeploy.sh']
