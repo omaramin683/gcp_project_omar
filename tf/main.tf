@@ -11,16 +11,13 @@ variable "storage_class" {
   type = string
 }
 
-resource "random_integer" "priority" {
-  min = 1
-  max = 50000
-  }
-output "my_integer" {
-  value = random_integer.my_integer.result
+resource "random_id" "id" {
+	  byte_length = 8
 }
 
+
 resource "google_storage_bucket" "default" {
-  name = "omar_tf_gcp_bucket_${my_integer}"
+  name = "omar_tf_gcp_bucket_${random_id.id.hex}"
   project = "${var.project}"
   storage_class = "REGIONAL"
   location = "us-east1"
