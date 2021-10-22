@@ -21,6 +21,7 @@ if [ -z "$FILTER_PROJ" ]; then
     gcloud services enable cloudbilling.googleapis.com
     gcloud alpha billing projects link ${NEW_PROJECT} --billing-account 01A2F5-73127B-50AE5B
     gcloud services enable compute.googleapis.com cloudresourcemanager.googleapis.com
+    export FILTER_PROJ
     sed 's/project_id/$FILTER_PROJ' variables.tf
     exit 0
 [ else gcloud config set project ${FILTER_PROJ}; ]
