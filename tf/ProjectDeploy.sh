@@ -13,7 +13,7 @@ export FILTER_PROJ
 
 echo "$FILTER_PROJ already exisits"
 terraform init
-terraform plan -out activator-plan -var="project=$FILTER_PROJ" -var-file=./tf/variables.tf
+terraform plan -out activator-plan -var='project=$FILTER_PROJ' #-var-file=./tf/variables.tf
 terraform apply --auto-approve activator-plan
 
 #if this does not exisit then the following code is to create a project
