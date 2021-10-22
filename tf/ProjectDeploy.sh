@@ -8,7 +8,7 @@ RANDOM_NUM=${RANDOM}
 export NEW_PROJECT="omar-cicd-${RANDOM_NUM}"
 
 #check if a project called omar-cicd-'random number' exisits in padawan dir
-FILTER_PROJ="$(gcloud projects list --filter 'parent.id=263138525915 AND parent.type=folder AND name:omar-cicd-*')"
+FILTER_PROJ="$(gcloud projects list --filter 'parent.id=263138525915 AND parent.type=folder AND name:omar-cicd-*' --format='value(project_id)')"
 export FILTER_PROJ
 
 echo "$FILTER_PROJ already exisits"
