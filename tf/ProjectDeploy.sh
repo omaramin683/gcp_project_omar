@@ -13,8 +13,6 @@ export FILTER_PROJ
 
 echo "$FILTER_PROJ already exisits"
 
-sed -i 's|project_id|'$FILTER_PROJ'|g' variables.tf
-
 #if this does not exisit then the following code is to create a project
 if [ -z "$FILTER_PROJ" ]; then
     gcloud projects create ${NEW_PROJECT} --folder=263138525915
@@ -25,7 +23,7 @@ if [ -z "$FILTER_PROJ" ]; then
     gcloud services enable compute.googleapis.com cloudresourcemanager.googleapis.com
     sed -i 's|project_id|'$NEW_PROJECT'|g' variables.tf
     exit 0
-[ else gcloud config set project ${FILTER_PROJ}; ]
+[ else gcloud config set project ${FILTER_PROJ} | sed -i 's|project_id|'$FILTER_PROJ'|g' variables.tf; ]
 export FILTER_PROJ
 echo "$FILTER_PROJ was created"
 
