@@ -22,6 +22,24 @@ if [ -z "$FILTER_PROJ" ]; then
     gcloud services enable cloudbilling.googleapis.com
     gcloud alpha billing projects link ${NEW_PROJECT} --billing-account 01A2F5-73127B-50AE5B
     gcloud services enable compute.googleapis.com cloudresourcemanager.googleapis.com
+    apt-get update -y 
+
+    apt-get upgrade -y 
+
+    apt-get install unzip -y 
+
+    apt-get install wget -y
+
+    echo "Getting Terraform package from Hashicorp"
+    wget https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip
+
+    rm -rf terraform/
+
+    echo "Unzipping Terraform package"
+    unzip -o terraform_0.13.1_linux_amd64.zip
+
+    echo "Move Terraform folder to user/bin directory"
+    mv terraform /usr/local/bin/ 
     terraform init
     terraform plan -out activator-plan -var="project=$FILTER_PROJ" #-var-file=./tf/variables.tf
     terraform apply --auto-approve activator-plan
