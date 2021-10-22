@@ -1,6 +1,19 @@
+variable "bucket_name" {
+  type = string
+  description = "Bucket name"
+}
+variable "bucket_location" {
+  type = string
+  default = "us-east1"
+}
+
+variable "storage_class" {
+  type = string
+}
+
 resource "google_storage_bucket" "default" {
-  name = "${var.bucket_name}"
+  name = "omar_tf_gcp_bucket_280199"
   project = "${var.project}"
-  storage_class = "${var.storage_class}"
-  location = "${var.bucket_location}"
+  storage_class = "REGIONAL"
+  location = "us-east1"
 }
