@@ -30,11 +30,15 @@ echo "Remove zip file"
 VERSION_INSTALLED="$(terraform -version)"
 echo "Version installed: ${VERSION_INSTALLED}"
 
-#echo "tf init---------"
-#terraform init 
-#echo "tf fmt---------"
-#terraform fmt
-#echo "tf plan---------"
-#terraform plan
-#echo "tf apply---------"
-#terraform apply --auto-approve
+echo "tf init---------"
+terraform init 
+echo "tf fmt---------"
+terraform fmt
+echo "tf plan---------"
+terraform plan
+echo "tf apply---------"
+terraform apply --auto-approve
+
+#terraform init
+#terraform plan -out activator-plan -var="project=$FILTER_PROJ" #-var-file=./tf/variables.tf
+#terraform apply --auto-approve activator-plan
