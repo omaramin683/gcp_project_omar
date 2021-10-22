@@ -31,7 +31,7 @@ VERSION_INSTALLED="$(terraform -version)"
 echo "Version installed: ${VERSION_INSTALLED}"
 
 echo "tf init---------"
-terraform init 
+terraform init -reconfigure
 echo "tf fmt---------"
 terraform fmt
 echo "tf plan---------"

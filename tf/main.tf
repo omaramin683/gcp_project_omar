@@ -3,10 +3,7 @@ terraform {
     google = {}
   }
 
-  backend "gcs" {
-    bucket = "UPDATE_ME_BUCKET_OMAR"      #change this  # GCS bucket name to store terraform tfstate
-    prefix = "Omar"           # Update to desired prefix name. Prefix name should be unique for each Terraform project having same remote state bucket.
-  }
+  
 }
 provider "google" {
     version = "3.5.0"
