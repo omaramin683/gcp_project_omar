@@ -16,5 +16,4 @@ resource "google_storage_bucket" "tf_bucket" {
   name          = "omar_tf_bucket"
   location  = "US"
   force_destroy = true
-  uniform_bucket_level_access = true
 }
