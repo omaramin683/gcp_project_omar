@@ -16,7 +16,6 @@ echo "$FILTER_PROJ already exisits"
 
 #if this does not exisit then the following code is to create a project
 if [ -z "$FILTER_PROJ" ]; then
-    cd ./tf/
     gcloud projects create ${NEW_PROJECT} --folder=263138525915
     gcloud config set project ${NEW_PROJECT}
     gcloud config set compute/zone europe-west1-b
